@@ -1,0 +1,11 @@
+{
+  "name": "xs-atom-syntax",
+  "theme": "syntax",
+  "version": "0.0.0",
+  "description": "XS-Labs syntax theme",
+  "repository": "https://github.com/macmade/xs-atom-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  }
+}
