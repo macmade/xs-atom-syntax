@@ -1,311 +1,280 @@
 @import "syntax-variables";
 
-atom-text-editor, :host {
-  background-color: @syntax-background-color;
-  color: @syntax-text-color;
-
-  .wrap-guide {
-    background-color: @syntax-wrap-guide-color;
-  }
-
-  .indent-guide {
-    color: @syntax-indent-guide-color;
-  }
-
-  .invisible-character {
-    color: @syntax-invisible-character-color;
-  }
-
-  .gutter {
-    background-color: @syntax-gutter-background-color;
-    color: @syntax-gutter-text-color;
-
-    .line-number {
-      &.cursor-line {
-        background-color: @syntax-gutter-background-color-selected;
-        color: @syntax-gutter-text-color-selected;
-      }
-
-      &.cursor-line-no-selection {
-        color: @syntax-gutter-text-color-selected;
-      }
+atom-text-editor,
+:host {
+    background-color:               @xs-background;
+    color:                          @xs-text;
+    
+    .wrap-guide {
+        background-color:           @xs-selection;
     }
-  }
-
-  .gutter .line-number.folded,
-  .gutter .line-number:after,
-  .fold-marker:after {
-    color: @light-gray;
-  }
-
-  .invisible {
-    color: @syntax-text-color;
-  }
-
-  .cursor {
-    color: @syntax-cursor-color;
-  }
-
-  .selection .region {
-    background-color: @syntax-selection-color;
-  }
+    .indent-guide {
+        color:                      @xs-invisible;
+    }
+    .invisible-character {
+        color:                      @xs-invisible;
+    }
+    .gutter {
+        background-color:           @xs-selection;
+        color:                      @xs-comment;
+        
+        .line-number {
+            &.cursor-line {
+                background-color:   @xs-background;
+                color:              @xs-text;
+            }
+            &.cursor-line-no-selection {
+                color:              @xs-text;
+            }
+        }
+    }
+    .gutter .line-number.folded,
+    .gutter .line-number:after,
+    .fold-marker:after {
+        background-color:           @xs-invisible;
+        color:                      @xs-text;
+    }
+    .invisible {
+        color:                      @xs-invisible;
+    }
+    .cursor {
+        color:                      @xs-cursor;
+    }
+    .selection .region {
+        background-color:           @xs-selection;
+    }
 }
 
 atom-text-editor .search-results .marker .region,
 :host .search-results .marker .region {
-  background-color: transparent;
-  border: 1px solid @syntax-result-marker-color;
+    background-color:               #FF0000;
+    border:                         1px solid #FF0000;
 }
 
 atom-text-editor .search-results .marker.current-result .region,
 :host .search-results .marker.current-result .region {
-  border: 1px solid @syntax-result-marker-color-selected;
+    border:                         1px solid #FF0000;
 }
 
 .comment {
-  color: @light-gray;
+    color:                          @xs-comment;
 }
 
 .entity {
-  &.name.type {
-    color: @light-orange;
-    text-decoration: underline;
-  }
-
-  &.other.inherited-class {
-    color: @green;
-  }
+    
+    &.name.type {
+        color:                      @xs-ctag;
+    }
+    &.other.inherited-class {
+        color:                      @xs-ctag;
+    }
 }
 
 .keyword {
-  color: @purple;
+    color:                          @xs-keyword;
 
-  &.control {
-    color: @purple;
-  }
-
-  &.operator {
-    color: @syntax-text-color;
-  }
-
-  &.other.special-method {
-    color: @blue;
-  }
-
-  &.other.unit {
-    color: @orange;
-  }
+    &.control {
+        color:                      @xs-keyword;
+    }
+    &.operator {
+        color:                      @xs-keyword;
+    }
+    &.other.special-method {
+        color:                      @xs-keyword;
+    }
+    &.other.unit {
+        color:                      @xs-keyword;
+    }
 }
 
 .storage {
-  color: @purple;
+    color:                          @xs-keyword;
 }
 
 .constant {
-  color: @orange;
-
-  &.character.escape {
-    color: @cyan;
-  }
-
-  &.numeric {
-    color: @orange;
-  }
-
-  &.other.color {
-    color: @cyan;
-  }
-
-  &.other.symbol {
-    color: @green;
-  }
+    color:                          @xs-keyword;
+    
+    &.character.escape {
+        color:                      @xs-string;
+    }
+    &.numeric {
+        color:                      @xs-number;
+    }
+    &.other.color {
+        color:                      @xs-preproc;
+    }
+    &.other.symbol {
+        color:                      @xs-preproc;
+    }
 }
 
 .variable {
-  color: @red;
-
-  &.interpolation {
-    color: darken(@red, 10%);
-  }
-
-  &.parameter.function {
-    color: @syntax-text-color;
-  }
+    color:                          @xs-ctag;
+    
+    &.interpolation {
+        color:                      darken( #FF0000, 10% );
+    }
+    &.parameter.function {
+        color:                      @xs-text;
+    }
 }
 
 .invalid.illegal {
-  background-color: @red;
-  color: @syntax-background-color;
+    background-color:               #FF0000;
+    color:                          @xs-background;
 }
 
 .string {
-  color: @red;
-
-
-  &.regexp {
-    color: @cyan;
-
-    .source.ruby.embedded {
-      color: @orange;
+    color:                          @xs-string;
+    
+    &.regexp {
+        color:                      @xs-string;
+        
+        .source.ruby.embedded {
+            color:                  @xs-string;
+        }
     }
-  }
-
-  &.other.link {
-    color: @red;
-  }
+    &.other.link {
+      color:                        @xs-keyword;
+    }
 }
 
 .punctuation {
-  &.definition {
-    &.comment {
-      color: @light-gray;
+    
+    &.definition {
+        
+        &.comment {
+            color:                  @xs-comment;
+        }
+        &.string {
+            color:                  @xs-string;
+        }
+        &.variable,
+        &.parameters,
+        &.array {
+            color:                  @xs-text;
+        }
+        &.heading,
+        &.identity {
+            color:                  #FF0000;
+        }
+        &.bold {
+            color:                  #FF0000;
+            font-weight:            bold;
+        }
+        &.italic {
+            color:                  #FF0000;
+            font-style:             italic;
+        }
     }
-
-    &.string,
-    &.variable,
-    &.parameters,
-    &.array {
-      color: @syntax-text-color;
+    &.section.embedded {
+        color:                      @xs-preproc;
     }
-
-    &.heading,
-    &.identity {
-      color: @blue;
-    }
-
-    &.bold {
-      color: @light-orange;
-      font-weight: bold;
-    }
-
-    &.italic {
-      color: @purple;
-      font-style: italic;
-    }
-  }
-
-  &.section.embedded {
-    color: darken(@red, 10%);
-  }
-
 }
 
 .support {
-  &.class {
-    color: @light-orange;
-  }
-
-  &.function  {
-    color: @cyan;
-
-    &.any-method {
-      color: @blue;
+    
+    &.class {
+        color:                      @xs-predefined;
     }
-  }
+    &.function  {
+        color:                      @xs-predefined;
+        
+        &.any-method {
+            color:                  @xs-predefined;
+        }
+    }
 }
 
 .entity {
-  &.name.function {
-    color: @blue;
-  }
-
-  &.name.class, &.name.type.class {
-    color: @light-orange;
-  }
-
-  &.name.section {
-    color: @blue;
-  }
-
-  &.name.tag {
-    color: @red;
-    text-decoration: underline;
-  }
-
-  &.other.attribute-name {
-    color: @orange;
-
-    &.id {
-      color: @blue;
+    
+    &.name.function {
+        color:                      @xs-ctag;
     }
-  }
+    &.name.class, &.name.type.class {
+        color:                      @xs-ctag;
+    }
+    &.name.section {
+        color:                      @xs-ctag;
+    }
+    &.name.tag {
+        color:                      @xs-predefined;
+    }
+    &.other.attribute-name {
+        color:                      @xs-ctag;
+        
+        &.id {
+            color:                  @xs-ctag;
+        }
+    }
 }
 
 .meta {
-  &.class {
-    color: @light-orange;
-  }
-
-  &.link {
-    color: @orange;
-  }
-
-  &.require {
-    color: @blue;
-  }
-
-  &.selector {
-    color: @purple;
-  }
-
-  &.separator {
-    background-color: @gray;
-    color: @syntax-text-color;
-  }
+    
+    &.class {
+        color:                      #FF0000;
+    }
+    &.link {
+        color:                      #FF0000;
+    }
+    &.require {
+        color:                      #FF0000;
+    }
+    &.selector {
+        color:                      #FF0000;
+    }
+    &.separator {
+        background-color:           #FF0000;
+        color:                      @xs-text;
+    }
 }
 
 .none {
-  color: @syntax-text-color;
+    color:                          @xs-text;
 }
 
 .markup {
-  &.bold {
-    color: @orange;
-    font-weight: bold;
-  }
-
-  &.changed {
-    color: @purple;
-  }
-
-  &.deleted {
-    color: @red;
-  }
-
-  &.italic {
-    color: @purple;
-    font-style: italic;
-  }
-
-  &.heading .punctuation.definition.heading {
-    color: @blue;
-  }
-
-  &.inserted {
-    color: @green;
-  }
-
-  &.list {
-    color: @red;
-  }
-
-  &.quote {
-    color: @orange;
-  }
-
-  &.raw.inline {
-    color: @green;
-  }
+    
+    &.bold {
+        color:                      #FF0000;
+        font-weight:                bold;
+    }
+    &.changed {
+        color:                      #FF0000;
+    }
+    &.deleted {
+        color:                      #FF0000;
+    }
+    &.italic {
+        color:                      #FF0000;
+        font-style:                 italic;
+    }
+    &.heading .punctuation.definition.heading {
+        color:                      #FF0000;
+    }
+    &.inserted {
+        color:                      #FF0000;
+    }
+    &.list {
+        color:                      #FF0000;
+    }
+    &.quote {
+        color:                      #FF0000;
+    }
+    &.raw.inline {
+        color:                      #FF0000;
+    }
 }
 
 .source.gfm .markup {
-  -webkit-font-smoothing: auto;
-  &.heading {
-    color: @green;
-  }
+    -webkit-font-smoothing:         auto;
+    
+    &.heading {
+        color:                      #FF0000;
+    }
 }
 
 atom-text-editor[mini] .scroll-view,
 :host([mini]) .scroll-view {
-  padding-left: 1px;
+    padding-left:                   1px;
 }
