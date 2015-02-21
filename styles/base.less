@@ -47,13 +47,13 @@ atom-text-editor,
 
 atom-text-editor .search-results .marker .region,
 :host .search-results .marker .region {
-    background-color:               #FF0000;
-    border:                         1px solid #FF0000;
+    background-color:               @xs-background;
+    border:                         1px solid @xs-text;
 }
 
 atom-text-editor .search-results .marker.current-result .region,
 :host .search-results .marker.current-result .region {
-    border:                         1px solid #FF0000;
+    border:                         1px solid @xs-text;
 }
 
 .comment {
@@ -111,17 +111,13 @@ atom-text-editor .search-results .marker.current-result .region,
 .variable {
     color:                          @xs-ctag;
     
-    &.interpolation {
-        color:                      darken( #FF0000, 10% );
-    }
     &.parameter.function {
         color:                      @xs-text;
     }
 }
 
 .invalid.illegal {
-    background-color:               #FF0000;
-    color:                          @xs-background;
+    color:                          @xs-text;
 }
 
 .string {
@@ -156,14 +152,12 @@ atom-text-editor .search-results .marker.current-result .region,
         }
         &.heading,
         &.identity {
-            color:                  #FF0000;
+            color:                  @xs-text;
         }
         &.bold {
-            color:                  #FF0000;
             font-weight:            bold;
         }
         &.italic {
-            color:                  #FF0000;
             font-style:             italic;
         }
     }
@@ -212,19 +206,18 @@ atom-text-editor .search-results .marker.current-result .region,
 .meta {
     
     &.class {
-        color:                      #FF0000;
+        color:                      @xs-text;
     }
     &.link {
-        color:                      #FF0000;
+        color:                      @xs-text;
     }
     &.require {
-        color:                      #FF0000;
+        color:                      @xs-text;
     }
     &.selector {
-        color:                      #FF0000;
+        color:                      @xs-text;
     }
     &.separator {
-        background-color:           #FF0000;
         color:                      @xs-text;
     }
 }
@@ -236,33 +229,33 @@ atom-text-editor .search-results .marker.current-result .region,
 .markup {
     
     &.bold {
-        color:                      #FF0000;
+        color:                      @xs-text;
         font-weight:                bold;
     }
-    &.changed {
-        color:                      #FF0000;
-    }
-    &.deleted {
-        color:                      #FF0000;
-    }
     &.italic {
-        color:                      #FF0000;
+        color:                      @xs-text;
         font-style:                 italic;
     }
+    &.changed {
+        color:                      @xs-text;
+    }
+    &.deleted {
+        color:                      @xs-text;
+    }
     &.heading .punctuation.definition.heading {
-        color:                      #FF0000;
+        color:                      @xs-text;
     }
     &.inserted {
-        color:                      #FF0000;
+        color:                      @xs-text;
     }
     &.list {
-        color:                      #FF0000;
+        color:                      @xs-text;
     }
     &.quote {
-        color:                      #FF0000;
+        color:                      @xs-text;
     }
     &.raw.inline {
-        color:                      #FF0000;
+        color:                      @xs-text;
     }
 }
 
@@ -270,7 +263,7 @@ atom-text-editor .search-results .marker.current-result .region,
     -webkit-font-smoothing:         auto;
     
     &.heading {
-        color:                      #FF0000;
+        color:                      @xs-text;
     }
 }
 
