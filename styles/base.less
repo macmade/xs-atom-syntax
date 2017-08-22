@@ -1,7 +1,6 @@
 @import "syntax-variables";
 
-atom-text-editor,
-:host {
+atom-text-editor {
     background-color:               @xs-background;
     color:                          @xs-text;
     
@@ -46,17 +45,17 @@ atom-text-editor,
 }
 
 atom-text-editor .search-results .marker .region,
-:host .search-results .marker .region {
+.search-results .marker .region {
     background-color:               @xs-background;
     border:                         1px solid @xs-text;
 }
 
 atom-text-editor .search-results .marker.current-result .region,
-:host .search-results .marker.current-result .region {
+.search-results .marker.current-result .region {
     border:                         1px solid @xs-text;
 }
 
-.comment {
+.syntax--comment {
     color:                          @xs-comment;
 }
 
@@ -139,7 +138,7 @@ atom-text-editor .search-results .marker.current-result .region,
     
     &.definition {
         
-        &.comment {
+        &.syntax--comment {
             color:                  @xs-comment;
         }
         &.string {
@@ -268,6 +267,6 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 atom-text-editor[mini] .scroll-view,
-:host([mini]) .scroll-view {
+.scroll-view {
     padding-left:                   1px;
 }
